@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Damián ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #192c50, #080b18 70%);
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#8edcff 1px, transparent 1px);
+  background-size: 53px 53px, 91px 91px;
+  animation: stars 12s linear infinite;
+  opacity: .5;
+}
+
+@keyframes stars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-90px); }
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: min(90%, 420px);
+  padding: 32px 24px;
+  border: 1px solid #ffffff30;
+  border-radius: 25px;
+  background: #10172dcc;
+  box-shadow: 0 0 50px #69caff20;
+}
+
+.heart {
+  font-size: 100px;
+  color: #76d7ff;
+  animation: beat 1s infinite;
+  text-shadow: 0 0 35px #62cfff;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.16); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+h1 {
+  color: #9be2ff;
+  font-size: 29px;
+}
+
+p {
+  line-height: 1.8;
+  color: #e0e8ff;
+}
+
+button {
+  border: 1px solid #9be2ff;
+  border-radius: 25px;
+  padding: 12px 22px;
+  background: #8bdcff;
+  color: #10172d;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#carta {
+  display: none;
+  margin-top: 20px;
+  animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<main class="card">
+  <div class="heart">♥</div>
+  <h1>Para Damián</h1>
+
+  <p>
+    Entre tantas personas en este mundo,
+    qué bonita casualidad fue coincidir contigo.
+  </p>
+
+  <button onclick="abrirCarta()">
+    Quiero decirte que.
+  </button>
+
+  <div id="carta">
+    <p>
+      No sé en qué momento empezaste a ser alguien tan especial para mí. Solo sé que, desde que llegaste, hay pequeños detalles
+      que se convirtieron en grandes momentos que significan mucho mas de lo que puedes imaginar. Te amo demasiado, y quiero 
+      decirte todo lo que siento por ti,  aunque me demoraria muchisimo, pero sabes? Hare que cada día te des cuenta de lo 
+      muchisimo que te amo y el amor que te tengo que ni las palabras pueden expresar todo lo que siento por ti. Quiero ser la 
+      mujer que este a tu lado por la eternidad, cuidar de ti, apoyarte en todo, estar en todo momento para ti, ser la persona
+      en quien confies y encuentres un refugio. Se que es mucho pedirte que estemos juntos por la eternidad, ya que no se trata 
+      de un momento solamente, se trata de que quiero estar contigo por siempre y para siempre, porque eres tu al que quiero 
+      tener a mi lado, eres tu con quien me quiero casar, formar una famila, un hogar... explorar el mundo con nuestra mutua
+      compañia. Hay tantas cosas que te quiero decir en serio.
+    </p>
+    <p>Con cariño, de mi para ti. 🩵</p>
+  </div>
+</main>
+
+<script>
+function abrirCarta() {
+  const carta = document.getElementById("carta");
+  carta.style.display = "block";
+  document.querySelector("button").style.display = "none";
+}
+</script>
+</body>
+</html>
